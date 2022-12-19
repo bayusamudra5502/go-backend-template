@@ -1,0 +1,51 @@
+definitions:
+  web.BaseResponse:
+    properties:
+      data: {}
+      message:
+        type: string
+      status:
+        enum:
+        - success
+        - failed
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is server for IIT Information System
+  title: Inkubator Tumpeng API
+  version: "1.0"
+paths:
+  /:
+    get:
+      description: Give server index page response
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.BaseResponse'
+      summary: Index page
+  /ping:
+    get:
+      description: Check server status whether is active
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.BaseResponse'
+      summary: Server heartbeat
+    post:
+      description: Check server status whether is active
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.BaseResponse'
+      summary: Server heartbeat
+swagger: "2.0"

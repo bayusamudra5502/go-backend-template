@@ -1,0 +1,78 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is server for IIT Information System",
+        "title": "Inkubator Tumpeng API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Give server index page response",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Index page",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.BaseResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/ping": {
+            "get": {
+                "description": "Check server status whether is active",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Server heartbeat",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.BaseResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Check server status whether is active",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Server heartbeat",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.BaseResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "web.BaseResponse": {
+            "type": "object",
+            "properties": {
+                "data": {},
+                "message": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "success",
+                        "failed"
+                    ]
+                }
+            }
+        }
+    }
+}
